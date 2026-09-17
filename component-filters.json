@@ -86,6 +86,12 @@
     ]
   },
   {
+    "id": "section",
+    "components": [
+      "harshacta"
+    ]
+  },
+  {
     "id": "video",
     "components": []
   }
