@@ -1,0 +1,63 @@
+.harshacta-container .harshacta-wrapper {
+  max-width: var(--page-width, 1200px);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 24px;
+}
+
+.harshacta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 48px 32px;
+  background-color: var(--light-color, #f4f4f4);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.harshacta h2,
+.harshacta h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.harshacta p {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #555;
+}
+
+.harshacta .button-container {
+  margin: 0;
+}
+
+.harshacta a.button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--link-color, #06c);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.harshacta a.button:hover {
+  background-color: #004b99;
+}
+
+@media (width >= 768px) {
+  .harshacta {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .harshacta p {
+    margin-bottom: 0;
+  }
+}

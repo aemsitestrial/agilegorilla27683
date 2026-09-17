@@ -5023,6 +5023,18 @@
     ]
   },
   {
+    "id": "harshacta",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "CTA Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
