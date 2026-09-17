@@ -1,0 +1,43 @@
+.text-container .text-wrapper {
+  max-width: var(--page-width, 1200px);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 24px;
+}
+
+.text {
+  padding: 32px 0;
+  color: var(--text-color, #111);
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.text p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.text p:last-child {
+  margin-bottom: 0;
+}
+
+.text a {
+  color: var(--link-color, #06c);
+  text-decoration: underline;
+}
+
+.text ul,
+.text ol {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}

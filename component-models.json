@@ -434,6 +434,26 @@
     ]
   },
   {
+    "id": "featureColumn",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text Content",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image (Right Side)",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "form-embed",
     "fields": [
       {
@@ -5878,6 +5898,18 @@
         "value": "",
         "label": "Second CTA Link",
         "description": "What link to open when clicking the button."
+      }
+    ]
+  },
+  {
+    "id": "text",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
