@@ -18,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "featureColumn",
+      "id": "feature-column",
       "fields": [
         {
           "component": "richtext",
@@ -38,5 +38,12 @@
       ]
     }
   ],
-  "filters": []
+  "filters": [
+  {
+    "id":"section",
+    "components": [ 
+      "feature-column"
+  ]
+}
+]
 }

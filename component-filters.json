@@ -58,6 +58,18 @@
     ]
   },
   {
+    "id": "dummyfooter",
+    "components": [
+      "dummyfooter"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "feature-column"
+    ]
+  },
+  {
     "id": "form",
     "components": [
       "captcha",

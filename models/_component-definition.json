@@ -78,6 +78,9 @@
         },
         {
           "...": "../blocks/harshacta/_*.json#/definitions"
+        },
+         {
+          "...": "../blocks/dummy-footer/_*.json#/definitions"
         }
       ]
     },
