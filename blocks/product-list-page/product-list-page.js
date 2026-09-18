@@ -34,7 +34,7 @@ export default async function decorate(block) {
       listview: true,
       displayMode: '', // "" for plp || "PAGE" for category/catalog
       addToCart: async (...args) => {
-        const { addProductsToCart } = await import('@dropins/storefront-cart/api.js');
+        const { addProductsToCart } = await import('../../scripts/__dropins__/storefront-cart/api.js');
         await addProductsToCart([{
           sku: args[0],
           options: args[1],
