@@ -456,7 +456,7 @@
         "valueType": "string"
       },
       {
-        "component": "richtext",
+        "component": "text-area",
         "name": "heroDescription",
         "label": "Hero Description",
         "valueType": "string"

@@ -19,7 +19,7 @@ export default function decorate(block) {
     return `<img src="${url}" alt="${alt}" />`;
   };
 
-  // Map input fields matching JSON Schema (7 fields total)
+  // Map input fields matching JSON Schema (6 fields total)
   const categoryTitle = extractText(fields[0]);
   const categoryIcon = renderImg(fields[1], 'Category Icon');
   const heroHeading = extractText(fields[2]);
