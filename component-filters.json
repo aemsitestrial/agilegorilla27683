@@ -34,7 +34,6 @@
       "reward-sticky",
       "sticky-cta",
       "quiz",
-      "feature-column",
       "feature-hero"
     ]
   },
@@ -57,12 +56,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "feature-column"
     ]
   },
   {
@@ -97,12 +90,6 @@
       "text-input",
       "tnc",
       "wizard"
-    ]
-  },
-  {
-    "id": "harshacta",
-    "components": [
-      "harshacta"
     ]
   },
   {

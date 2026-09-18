@@ -434,26 +434,6 @@
     ]
   },
   {
-    "id": "feature-column",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text Content",
-        "valueType": "string",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image (Right Side)",
-        "multi": false
-      }
-    ]
-  },
-  {
     "id": "feature-hero",
     "fields": [
       {
@@ -5068,18 +5048,6 @@
         "component": "aem-content",
         "name": "reference",
         "label": "Reference"
-      }
-    ]
-  },
-  {
-    "id": "harshacta",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "CTA Content",
-        "valueType": "string"
       }
     ]
   },

@@ -77,15 +77,6 @@
           "...": "../blocks/sticky-cta/_*.json#/definitions"
         },
         {
-          "...": "../blocks/harshacta/_*.json#/definitions"
-        },
-         {
-          "...": "../blocks/dummy-footer/_*.json#/definitions"
-        },
-         {
-          "...": "../blocks/feature-column/_*.json#/definitions"
-        },
-        {
           "...": "../blocks/feature-hero/_*.json#/definitions"
         }
       ]
