@@ -33,7 +33,9 @@
       "reward",
       "reward-sticky",
       "sticky-cta",
-      "quiz"
+      "quiz",
+      "feature-column",
+      "feature-hero"
     ]
   },
   {
@@ -58,15 +60,15 @@
     ]
   },
   {
-    "id": "dummyfooter",
-    "components": [
-      "dummyfooter"
-    ]
-  },
-  {
     "id": "section",
     "components": [
       "feature-column"
+    ]
+  },
+  {
+    "id": "feature-hero",
+    "components": [
+      "feature-hero"
     ]
   },
   {

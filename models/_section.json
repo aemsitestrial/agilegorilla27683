@@ -97,7 +97,9 @@
         "reward",
         "reward-sticky",
         "sticky-cta",
-        "quiz"
+        "quiz",
+        "feature-column",
+        "feature-hero"
       ]
     }
   ]
