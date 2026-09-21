@@ -14,7 +14,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Keeps right image baseline flush with the bottom of content */
+  align-items: flex-start; /* Aligns image top edge exactly with the top of the text block */
   gap: 40px;
 }
 
@@ -74,7 +74,7 @@
   margin: 0 0 28px;
 }
 
-/* CTA Link (Matching Reference Design) */
+/* CTA Link */
 .feature-hero .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -98,21 +98,21 @@
   color: #fff;
 }
 
-/* Right Side Image (Flush Bottom Alignment) */
+/* Right Image (Top-aligned & extended bottom) */
 .feature-hero .hero-image {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 100%;
 }
 
 .feature-hero .hero-image img,
 .feature-hero .hero-image picture {
-  width: auto;
-  max-width: 100%;
-  max-height: 420px;
-  object-fit: contain;
+  width: 100%;
+  height: 500px; /* Adjust height slightly as needed to extend down past the CTA */
+  object-fit: cover; /* Keeps photograph filled without distortion */
+  object-position: center top; /* Anchors focus towards top */
   display: block;
 }
 
@@ -140,7 +140,7 @@
 
   .feature-hero .hero-image img,
   .feature-hero .hero-image picture {
-    max-height: 350px;
+    height: 380px;
   }
 }
 
@@ -170,6 +170,6 @@
 
   .feature-hero .hero-image img,
   .feature-hero .hero-image picture {
-    max-height: 260px;
+    height: 280px;
   }
 }
