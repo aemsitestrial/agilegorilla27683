@@ -1,3 +1,4 @@
+/* Target both initial raw block and decorated block */
 .input-cta-wrapper,
 .input-cta {
   box-sizing: border-box;
@@ -7,6 +8,13 @@
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
+}
+
+/* Reset stacked child divs rendered by Universal Editor */
+.input-cta > div {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .input-cta .input-cta-container {
@@ -19,7 +27,7 @@
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 9999px; /* Pill Shape */
-  box-shadow: 0 10px 25px rgb(0 0 0 / 8%); /* Floating Soft Drop Shadow */
+  box-shadow: 0 10px 25px rgb(0 0 0 / 8%); /* Soft Ambient Floating Shadow */
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -54,7 +62,13 @@
   font-weight: 400;
 }
 
-/* Voice Search Microphone Button */
+/* Actions Wrapper & Mic Button */
+.input-cta .input-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .input-cta .btn-mic {
   background: transparent;
   border: none;
@@ -65,8 +79,7 @@
   justify-content: center;
   color: #4a4a4a;
   border-radius: 50%;
-  flex-shrink: 0;
-  transition: color 0.2s ease, transform 0.1s ease;
+  transition: color 0.2s ease;
 }
 
 .input-cta .btn-mic:hover {
@@ -79,7 +92,7 @@
   fill: currentcolor;
 }
 
-/* Responsive Scaling */
+/* Mobile Adjustments */
 @media (width <= 600px) {
   .input-cta .input-cta-container {
     max-width: 100%;

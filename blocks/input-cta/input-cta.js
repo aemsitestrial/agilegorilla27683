@@ -2,15 +2,16 @@ export default function decorate(block) {
   block.classList.add('input-cta');
 
   const rows = [...block.children];
+  if (rows.length === 0) return;
 
-  // Extract authoring fields
+  // Flatten rows to extract individual field data safely
   const fields = rows.map((row) => row.firstElementChild || row);
   const extractText = (el) => el?.querySelector('p, div, a')?.textContent?.trim() || el?.textContent?.trim() || '';
 
   const prefixText = extractText(fields[0]) || 'Ask TCS';
   const placeholderText = extractText(fields[1]) || 'About Banking Modernisation';
 
-  // SVG Icon
+  // Crisp Microphone Icon SVG
   const micSvg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
@@ -18,7 +19,7 @@ export default function decorate(block) {
     </svg>
   `;
 
-  // Render Component Structure
+  // Clear raw authoring DOM rows and build the Pill UI
   block.innerHTML = `
     <div class="input-cta-container">
       ${prefixText ? `<span class="input-prefix">${prefixText}</span>` : ''}
@@ -36,16 +37,13 @@ export default function decorate(block) {
     </div>
   `;
 
-  // Attach handles
   const inputField = block.querySelector('.input-field');
   const micBtn = block.querySelector('.btn-mic');
 
   const handleSubmit = () => {
     const rawQuery = inputField.value.trim() || inputField.placeholder;
 
-    if (!rawQuery) {
-      return;
-    }
+    if (!rawQuery) return;
 
     const query = `${prefixText} ${rawQuery}`.trim();
 
