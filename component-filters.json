@@ -34,7 +34,8 @@
       "reward-sticky",
       "sticky-cta",
       "quiz",
-      "feature-hero"
+      "feature-hero",
+      "input-cta"
     ]
   },
   {
@@ -90,6 +91,12 @@
       "text-input",
       "tnc",
       "wizard"
+    ]
+  },
+  {
+    "id": "input-cta",
+    "components": [
+      "input-cta"
     ]
   },
   {

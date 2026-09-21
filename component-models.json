@@ -5078,6 +5078,17 @@
     ]
   },
   {
+    "id": "input-cta",
+    "fields": [
+      {
+        "component": "text",
+        "name": "placeholderText",
+        "label": "Default Prompt / Placeholder Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "offer",
     "fields": [
       {
