@@ -22,8 +22,14 @@
       "fields": [
         {
           "component": "text",
+          "name": "prefixText",
+          "label": "Prefix Text (e.g. Ask TCS)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
           "name": "placeholderText",
-          "label": "Default Prompt / Placeholder Text",
+          "label": "Placeholder Prompt (e.g. About Banking Modernisation)",
           "valueType": "string"
         }
       ]

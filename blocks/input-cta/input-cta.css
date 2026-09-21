@@ -2,55 +2,56 @@
 .input-cta {
   box-sizing: border-box;
   width: 100%;
-  padding: 16px 24px;
-  background-color: #fff;
+  padding: 16px;
+  background: transparent;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 .input-cta .input-cta-container {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 520px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 12px 20px;
+  gap: 8px;
+  padding: 10px 20px;
   background-color: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 9999px; /* Pill shape */
-  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+  border: 1px solid #eaeaea;
+  border-radius: 9999px; /* Pill Shape */
+  box-shadow: 0 10px 25px rgb(0 0 0 / 8%); /* Floating Soft Drop Shadow */
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .input-cta .input-cta-container:focus-within,
 .input-cta .input-cta-container:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 8%);
+  border-color: #d1d5db;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 12%);
 }
 
-/* Text Input Field */
+/* Static Prefix Text ("Ask TCS") */
+.input-cta .input-prefix {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* Editable Input Field ("About Banking Modernisation") */
 .input-cta .input-field {
   flex: 1;
   border: none;
   outline: none;
   background: transparent;
-  font-size: 16px;
-  font-style: italic;
-  color: #1e293b;
-  padding: 4px 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #111;
+  padding: 2px 0;
 }
 
 .input-cta .input-field::placeholder {
-  color: #64748b;
-  font-style: italic;
-}
-
-/* Action Buttons Wrapper */
-.input-cta .input-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
+  color: #9ea3ae;
+  font-weight: 400;
 }
 
 /* Voice Search Microphone Button */
@@ -58,80 +59,35 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #64748b;
+  color: #4a4a4a;
   border-radius: 50%;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.1s ease;
 }
 
 .input-cta .btn-mic:hover {
-  color: #0f172a;
-  background-color: #f1f5f9;
+  color: #111;
 }
 
 .input-cta .btn-mic svg {
-  width: 20px;
-  height: 20px;
-  fill: currentcolor;
-}
-
-/* Submit Blue Circular Arrow Button */
-.input-cta .btn-submit {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #4f80ff; /* Blue accent color */
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.input-cta .btn-submit:hover {
-  background-color: #3b62f6;
-}
-
-.input-cta .btn-submit:active {
-  transform: scale(0.95);
-}
-
-.input-cta .btn-submit svg {
   width: 18px;
   height: 18px;
-  stroke: currentcolor;
-  stroke-width: 2.5;
-  fill: none;
+  fill: currentcolor;
 }
 
 /* Responsive Scaling */
 @media (width <= 600px) {
-  .input-cta-wrapper,
-  .input-cta {
-    padding: 12px 16px;
-  }
-
   .input-cta .input-cta-container {
-    padding: 8px 14px;
-    gap: 10px;
+    max-width: 100%;
+    padding: 8px 16px;
   }
 
+  .input-cta .input-prefix,
   .input-cta .input-field {
     font-size: 14px;
-  }
-
-  .input-cta .btn-submit {
-    width: 32px;
-    height: 32px;
-  }
-
-  .input-cta .btn-submit svg {
-    width: 16px;
-    height: 16px;
   }
 }
