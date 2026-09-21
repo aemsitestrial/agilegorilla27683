@@ -7,6 +7,7 @@
   font-family: Arial, sans-serif;
   padding: 64px 56px 80px;
   position: relative;
+  overflow: hidden; /* Contains any unexpected content overflow */
 }
 
 .feature-hero .hero-container {
@@ -24,6 +25,7 @@
   display: flex;
   gap: 40px;
   flex: 1;
+  min-width: 0; /* Prevents flex child text overflow */
 }
 
 /* Left Column: Fixed width forces exact 3-line heading break */
@@ -42,6 +44,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 /* Category Title & Icon */
@@ -59,6 +62,7 @@
   line-height: 1.6;
   letter-spacing: 0.0125em;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .feature-hero .category-icon img {
@@ -79,6 +83,7 @@
   color: #111;
   opacity: 1;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 /* Middle Description Paragraph */
@@ -93,6 +98,7 @@
   color: #303030;
   opacity: 1;
   margin: 0 0 24px;
+  overflow-wrap: break-word;
 }
 
 /* CTA Wrapper for Stacking Links */
@@ -101,16 +107,20 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+  width: 100%;
+  max-width: 358px;
 }
 
-/* Primary CTA Button */
+/* Primary CTA Button (Fixed Overflow Issue) */
 .feature-hero .hero-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
   min-width: 209px;
-  height: 36px;
+  max-width: 100%; /* Constrains button to column width */
+  min-height: 36px;
+  height: auto; /* Allows button to expand vertically if text is long */
   padding: 8px 16px;
   border: 1px solid #1f1f1f;
   border-radius: 0;
@@ -118,10 +128,11 @@
   color: #1f1f1f;
   font-size: 14px;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 120%;
   letter-spacing: 0.01em;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal; /* Allows long CTA text to wrap onto next line */
+  overflow-wrap: break-word; /* Breaks long continuous text strings */
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
 }
@@ -140,6 +151,9 @@
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
   transition: color 0.2s ease;
 }
 
@@ -147,28 +161,28 @@
   color: #4e84ff;
 }
 
-/* Right Side Image */
+/* Right Side Image Container (Fixed Overflow Issue) */
 .feature-hero .hero-image {
+  flex: 1;
   width: 100%;
-  max-width: 606px;
-  height: auto;
-  max-height: 606px;
+  max-width: 480px; /* Constrains container boundary */
+  height: 380px; /* Caps maximum block height */
   padding: 10px;
-  gap: 10px;
-  background-color: #fff;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  opacity: 1;
+  overflow: hidden; /* Clips image edges if scaled up */
 }
 
 .feature-hero .hero-image img,
 .feature-hero .hero-image picture {
   width: 100%;
-  height: auto;
-  max-height: 606px;
-  object-fit: contain;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* Ensures photos fill block cleanly without spilling out */
+  object-position: center;
   display: block;
 }
 
@@ -195,10 +209,15 @@
   .feature-hero .hero-content {
     gap: 24px;
     width: 100%;
+    flex-direction: column;
   }
 
   .feature-hero .hero-heading {
     font-size: 32px;
+  }
+
+  .feature-hero .hero-image {
+    height: 320px;
   }
 }
 
@@ -208,12 +227,11 @@
     padding: 32px 20px 64px;
   }
 
-  .feature-hero .hero-content {
-    flex-direction: column;
-    gap: 16px;
-  }
-
   .feature-hero .hero-heading {
     font-size: 26px;
+  }
+
+  .feature-hero .hero-image {
+    height: 260px;
   }
 }
