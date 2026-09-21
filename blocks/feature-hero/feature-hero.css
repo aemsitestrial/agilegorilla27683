@@ -25,19 +25,26 @@
   flex: 1;
 }
 
+/* Left Column: Fixed width forces exact 3-line heading break */
 .feature-hero .column-left {
-  width: 406px; /* Matching Figma Specs */
+  width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
 }
 
+/* Middle Description Column */
 .feature-hero .column-right {
-  width: 358px; /* Matching Figma Specs */
+  width: 358px;
+  max-width: 358px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-shrink: 0;
 }
 
-/* Category & Icon (Matching Figma Specs) */
+/* Category Title & Icon */
 .feature-hero .category-wrapper {
   display: flex;
   flex-direction: column;
@@ -47,10 +54,10 @@
 
 .feature-hero .category-title {
   font-size: 14px;
-  font-weight: 600; /* Semi-Bold */
-  color: #4e84ff; /* Figma #4E84FF */
-  line-height: 1.6; /* 160% */
-  letter-spacing: 0.0125em; /* 1.25% */
+  font-weight: 600;
+  color: #4e84ff;
+  line-height: 1.6;
+  letter-spacing: 0.0125em;
   margin: 0;
 }
 
@@ -60,64 +67,84 @@
   object-fit: contain;
 }
 
-/* Main Heading & Description (Matching Figma Specs) */
+/* Title / Main Heading (Figma Specs Applied) */
 .feature-hero .hero-heading {
+  width: 100%;
+  max-width: 406px;
   font-size: 38px;
-  line-height: 1.4; /* 140% */
-  letter-spacing: -0.03em; /* -3% */
   font-weight: 400; /* Regular */
+  font-style: normal;
+  line-height: 140%; /* 1.4 */
+  letter-spacing: -0.03em; /* -3% */
   color: #111;
+  opacity: 1;
   margin: 0;
 }
 
+/* Sub text / Middle Description (Figma Specs Applied) */
 .feature-hero .hero-description {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #303030; /* Figma #303030 */
+  width: 100%;
+  max-width: 358px;
+  font-size: 16px; /* Increased font size */
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  line-height: 160%; /* 1.6 */
+  letter-spacing: 0.01em; /* 1% */
+  color: #303030; /* --Text-Neutral-Default */
+  opacity: 1;
   margin: 0 0 28px;
 }
 
-/* CTA Link */
+/* CTA Link / Button (Figma Specs Applied) */
 .feature-hero .hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  min-width: 209px;
+  height: 36px;
   padding: 8px 16px;
-  border: 1px solid #111;
+  border: 1px solid #1f1f1f;
   border-radius: 0;
   background-color: transparent;
-  color: #111;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
+  color: #1f1f1f; /* --Text-Default-Default */
+  font-size: 14px;
+  font-weight: 400; /* Regular */
+  line-height: 100%;
+  letter-spacing: 0.01em; /* 1% */
   text-decoration: none;
   white-space: nowrap;
   box-sizing: border-box;
+  opacity: 1;
   transition: all 0.2s ease-in-out;
 }
 
 .feature-hero .hero-cta:hover {
-  background-color: #111;
+  background-color: #1f1f1f;
   color: #fff;
 }
 
-/* Right Side Illustration (Matching Figma Specs) */
+/* Right Side Image (Figma Specs Applied) */
 .feature-hero .hero-image {
   width: 100%;
-  max-width: 606px; /* Figma Fixed Width */
+  max-width: 606px;
   height: auto;
-  padding: 10px; /* Figma Padding */
+  max-height: 606px;
+  padding: 10px;
+  gap: 10px;
+  background-color: #fff;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  opacity: 1;
 }
 
 .feature-hero .hero-image img,
 .feature-hero .hero-image picture {
   width: 100%;
   height: auto;
-  max-height: 606px; /* Figma Fixed Height Limit */
+  max-height: 606px;
   object-fit: contain;
   display: block;
 }
