@@ -2,46 +2,53 @@
 .feature-hero1 {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1440px; /* Exact Figma Outer Width Frame */
-  min-height: 790px; /* Exact Figma Outer Height */
+  max-width: 1440px; /* Exact Figma Frame Width */
+  min-height: 790px; /* Exact Figma Frame Height */
   margin: 0 auto;
   background: #fff;
   color: #1e1e1e;
   font-family: Arial, sans-serif;
-  padding: 64px 56px 80px;
+  padding: 64px 56px 96px;
   position: relative;
   overflow: hidden;
 }
 
+/* Force horizontal row display across all top-level containers */
 .feature-hero1 .hero-container {
   width: 100%;
   max-width: 1328px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: flex !important;
+  flex-direction: row !important; /* Forces side-by-side layout */
+  justify-content: space-between !important;
+  align-items: flex-start !important;
   gap: 40px;
 }
 
-/* Main Content Flex Layout */
+/* Horizontal Main Content Wrapper (Left + Middle Columns) */
 .feature-hero1 .hero-content {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important; /* Forces side-by-side left & middle columns */
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
   gap: 40px;
   flex: 1;
   min-width: 0;
 }
 
-/* Left Column: Fixed 406px Width Forces Exact 3-Line Wrap */
+/* Left Column Specs (406px forces 3-line heading break) */
 .feature-hero1 .column-left {
-  width: 406px;
-  max-width: 406px;
-  flex-shrink: 0;
+  width: 406px !important;
+  max-width: 406px !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* Category Title & Icon */
 .feature-hero1 .category-wrapper {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -52,19 +59,19 @@
   font-size: 14px;
   font-weight: 600; /* Semi Bold */
   color: #4e84ff; /* Figma #4E84FF */
-  line-height: 1.6; /* 160% */
-  letter-spacing: 0.0125em; /* 1.25% */
+  line-height: 1.6;
+  letter-spacing: 0.0125em;
   margin: 0;
   overflow-wrap: break-word;
 }
 
 .feature-hero1 .category-icon img {
-  width: 48px; /* Figma 48x48 Size */
+  width: 48px; /* Figma 48x48 */
   height: 48px;
   object-fit: contain;
 }
 
-/* Hero Heading */
+/* Hero Main Heading */
 .feature-hero1 .hero-heading {
   width: 406px;
   max-width: 406px;
@@ -72,24 +79,23 @@
   font-size: 38px;
   font-weight: 400; /* Regular */
   font-style: normal;
-  line-height: 140%; /* 1.4 */
-  letter-spacing: -0.03em; /* -3% */
+  line-height: 140%;
+  letter-spacing: -0.03em;
   color: #111;
-  opacity: 1;
   margin: 0;
   overflow-wrap: break-word;
 }
 
 /* Middle Column Specs */
 .feature-hero1 .column-right {
-  width: 340px;
-  max-width: 340px;
+  width: 340px !important;
+  max-width: 340px !important;
   min-height: 316px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex-shrink: 0 !important;
   min-width: 0;
 }
 
@@ -100,20 +106,18 @@
   min-height: 156px;
   font-size: 16px;
   font-weight: 400; /* Regular */
-  font-style: normal;
-  line-height: 160%; /* 1.6 */
-  letter-spacing: 0.01em; /* 1% */
-  color: #303030; /* Figma #303030 */
-  opacity: 1;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #303030;
   margin: 0 0 24px;
   overflow-wrap: break-word;
 }
 
-/* CTA Links Stacking Container */
+/* CTA Links Vertical Stack */
 .feature-hero1 .cta-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
   gap: 16px;
   width: 100%;
   max-width: 340px;
@@ -121,16 +125,15 @@
 
 /* Primary CTA Button */
 .feature-hero1 .hero-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
   gap: 8px;
   width: auto;
   max-width: 326px;
-  height: 40px; /* Figma 40px Height */
+  height: 40px;
   padding: 8px 16px;
   border: 1px solid #1f1f1f;
-  border-radius: 0;
   background-color: transparent;
   color: #1f1f1f;
   font-size: 14px;
@@ -145,7 +148,7 @@
 }
 
 .feature-hero1 .hero-cta .cta-arrow {
-  width: 14px; /* Figma 14x14 Icon */
+  width: 14px;
   height: 14px;
   flex-shrink: 0;
 }
@@ -157,12 +160,12 @@
 
 /* Secondary CTA Link */
 .feature-hero1 .hero-secondary-link {
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex !important;
+  align-items: center !important;
   gap: 6px;
   width: auto;
   max-width: 196px;
-  height: 40px; /* Figma 40px Height */
+  height: 40px;
   color: #303030;
   font-size: 14px;
   font-weight: 400;
@@ -176,19 +179,19 @@
   color: #4e84ff;
 }
 
-/* Right Side Illustration Container */
+/* Right Side Illustration Container (550px Frame) */
 .feature-hero1 .hero-image {
-  width: 550px; /* Exact Figma 550x550 Frame */
-  max-width: 550px;
-  height: 550px;
-  max-height: 550px;
+  width: 550px !important;
+  max-width: 550px !important;
+  height: 550px !important;
+  max-height: 550px !important;
   padding: 10px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
   overflow: hidden;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 .feature-hero1 .hero-image img,
@@ -202,7 +205,7 @@
   display: block;
 }
 
-/* Bottom Search Pill Component Container */
+/* Bottom Search Pill Floating Bar */
 .feature-hero1 .hero-search-pill {
   position: absolute;
   bottom: 24px;
@@ -210,14 +213,15 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 380px; /* Figma 380px Pill Width */
-  height: 48px; /* Figma 48px Pill Height */
+  height: 48px;
   background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 9999px;
   box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
   padding: 0 6px 0 20px;
   box-sizing: border-box;
 }
@@ -229,23 +233,23 @@
   outline: none;
   background: transparent;
   font-family: Arial, sans-serif;
-  font-size: 14px; /* Body 3 Size */
-  font-weight: 400; /* Regular */
-  font-style: normal;
-  line-height: 160%; /* 160% Line Height */
-  letter-spacing: 0.01em; /* 1% Letter Spacing */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.01em;
   color: #303030;
   vertical-align: middle;
 }
 
 .feature-hero1 .hero-search-pill .search-input::placeholder {
   color: #717171;
-  font-style: italic; /* Matches Figma Prompt */
+  font-style: italic;
 }
 
 .feature-hero1 .hero-search-pill .search-actions {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
   gap: 8px;
   width: 88px;
   height: 40px;
@@ -275,7 +279,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #4e84ff; /* Figma Solid Blue Circle */
+  background-color: #4e84ff; /* Figma Blue Circle */
   border: none;
   color: #fff;
   display: flex;
@@ -297,7 +301,7 @@
   fill: none;
 }
 
-/* Responsive Rules */
+/* Tablet & Mobile Responsive Stack */
 @media (width <= 1024px) {
   .feature-hero1-wrapper,
   .feature-hero1 {
@@ -306,31 +310,32 @@
   }
 
   .feature-hero1 .hero-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 32px;
   }
 
   .feature-hero1 .column-left,
   .feature-hero1 .column-right,
   .feature-hero1 .hero-image {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .feature-hero1 .hero-content {
     gap: 24px;
     width: 100%;
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .feature-hero1 .hero-heading {
     font-size: 32px;
     min-height: auto;
+    width: 100% !important;
   }
 
   .feature-hero1 .hero-image {
-    height: 380px;
+    height: 380px !important;
   }
 }
 
@@ -345,6 +350,6 @@
   }
 
   .feature-hero1 .hero-image {
-    height: 280px;
+    height: 280px !important;
   }
 }
