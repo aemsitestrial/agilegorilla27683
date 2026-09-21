@@ -4,31 +4,32 @@ export default function decorate(block) {
   const rows = [...block.children];
   if (rows.length === 0) return;
 
-  // Extract authored row fields safely
   const fields = rows.map((row) => row.firstElementChild || row);
 
   const extractText = (el) => el?.querySelector('p, div, a')?.textContent?.trim() || el?.textContent?.trim() || '';
   const extractHref = (el) => el?.querySelector('a')?.getAttribute('href') || extractText(el) || '#';
 
-  const renderImg = (container, alt) => {
+  const extractImgTag = (container) => {
     if (!container) return '';
     const imgOrPicture = container.querySelector('picture, img');
     if (imgOrPicture) return imgOrPicture.outerHTML;
     const url = extractText(container);
-    if (!url) return '';
-    return `<img src="${url}" alt="${alt}" />`;
+    if (url && (url.startsWith('http') || url.startsWith('/') || url.startsWith('.'))) {
+      return `<img src="${url}" alt="" />`;
+    }
+    return '';
   };
 
-  // Map input fields matching the 10 fields in JSON Model
+  // Map input fields matching exact authoring schema
   const categoryTitle = extractText(fields[0]);
-  const categoryIcon = renderImg(fields[1], 'Category Icon');
+  const categoryIcon = extractImgTag(fields[1]);
   const heroHeading = extractText(fields[2]);
   const heroDescription = extractText(fields[3]);
   const ctaText = extractText(fields[4]);
   const ctaHref = extractHref(fields[5]);
   const secondaryText = extractText(fields[6]);
   const secondaryHref = extractHref(fields[7]);
-  const heroImage = renderImg(fields[8], 'Hero Illustration');
+  const heroImage = extractImgTag(fields[8]);
   const searchPlaceholder = extractText(fields[9]) || 'Ask about AI Transformation';
 
   // Crisp Vector SVGs for Search Actions
@@ -46,7 +47,7 @@ export default function decorate(block) {
     </svg>
   `;
 
-  // Build semantic block DOM matching full Figma architecture
+  // Construct transformed layout
   block.innerHTML = `
     <div class="hero-container">
       <div class="hero-content">
@@ -61,7 +62,7 @@ export default function decorate(block) {
           ${heroDescription ? `<p class="hero-description">${heroDescription}</p>` : ''}
           <div class="cta-wrapper">
             ${ctaText ? `<a href="${ctaHref}" class="hero-cta"><span>${ctaText}</span><span class="cta-arrow">&rarr;</span></a>` : ''}
-            ${secondaryText ? `<a href="${secondaryHref}" class="hero-secondary-link">${secondaryText} &rarr;</a>` : ''}
+            ${secondaryText ? `<a href="${secondaryHref}" class="hero-secondary-link"><span>${secondaryText}</span><span class="cta-arrow">&rarr;</span></a>` : ''}
           </div>
         </div>
       </div>
@@ -86,7 +87,7 @@ export default function decorate(block) {
     </div>
   `;
 
-  // Attach search event listeners
+  // Search action handlers
   const inputField = block.querySelector('.search-input');
   const submitBtn = block.querySelector('.btn-submit-circle');
   const micBtn = block.querySelector('.btn-mic');
@@ -104,14 +105,10 @@ export default function decorate(block) {
 
   submitBtn?.addEventListener('click', handleSearchSubmit);
   micBtn?.addEventListener('click', () => {
-    block.dispatchEvent(new CustomEvent('hero1-mic-click', {
-      bubbles: true,
-    }));
+    block.dispatchEvent(new CustomEvent('hero1-mic-click', { bubbles: true }));
   });
 
   inputField?.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      handleSearchSubmit();
-    }
+    if (event.key === 'Enter') handleSearchSubmit();
   });
 }
