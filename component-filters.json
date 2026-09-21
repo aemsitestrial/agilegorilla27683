@@ -35,7 +35,8 @@
       "sticky-cta",
       "quiz",
       "feature-hero",
-      "input-cta"
+      "input-cta",
+      "feature-hero1"
     ]
   },
   {
@@ -57,6 +58,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "feature-hero1",
+    "components": [
+      "feature-hero1"
     ]
   },
   {

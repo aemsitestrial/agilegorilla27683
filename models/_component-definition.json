@@ -81,6 +81,9 @@
         },
         {
           "...": "../blocks/input-cta/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/feature-hero1/_*.json#/definitions"
         }
       ]
     },

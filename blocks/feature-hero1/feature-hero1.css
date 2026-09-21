@@ -1,0 +1,350 @@
+.feature-hero1-wrapper,
+.feature-hero1 {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px; /* Exact Figma Outer Width Frame */
+  min-height: 790px; /* Exact Figma Outer Height */
+  margin: 0 auto;
+  background: #fff;
+  color: #1e1e1e;
+  font-family: Arial, sans-serif;
+  padding: 64px 56px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-hero1 .hero-container {
+  width: 100%;
+  max-width: 1328px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Main Content Flex Layout */
+.feature-hero1 .hero-content {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Left Column: Fixed 406px Width Forces Exact 3-Line Wrap */
+.feature-hero1 .column-left {
+  width: 406px;
+  max-width: 406px;
+  flex-shrink: 0;
+}
+
+/* Category Title & Icon */
+.feature-hero1 .category-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.feature-hero1 .category-title {
+  width: 242px;
+  height: 26px;
+  font-size: 14px;
+  font-weight: 600; /* Semi Bold */
+  color: #4e84ff; /* Figma #4E84FF */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0.0125em; /* 1.25% */
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.feature-hero1 .category-icon img {
+  width: 48px; /* Figma 48x48 Size */
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Hero Heading */
+.feature-hero1 .hero-heading {
+  width: 406px;
+  max-width: 406px;
+  min-height: 201px;
+  font-size: 38px;
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  line-height: 140%; /* 1.4 */
+  letter-spacing: -0.03em; /* -3% */
+  color: #111;
+  opacity: 1;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* Middle Column Specs */
+.feature-hero1 .column-right {
+  width: 340px;
+  max-width: 340px;
+  min-height: 316px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* Description Paragraph */
+.feature-hero1 .hero-description {
+  width: 340px;
+  max-width: 340px;
+  min-height: 156px;
+  font-size: 16px;
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  line-height: 160%; /* 1.6 */
+  letter-spacing: 0.01em; /* 1% */
+  color: #303030; /* Figma #303030 */
+  opacity: 1;
+  margin: 0 0 24px;
+  overflow-wrap: break-word;
+}
+
+/* CTA Links Stacking Container */
+.feature-hero1 .cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 340px;
+}
+
+/* Primary CTA Button */
+.feature-hero1 .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: auto;
+  max-width: 326px;
+  height: 40px; /* Figma 40px Height */
+  padding: 8px 16px;
+  border: 1px solid #1f1f1f;
+  border-radius: 0;
+  background-color: transparent;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.feature-hero1 .hero-cta .cta-arrow {
+  width: 14px; /* Figma 14x14 Icon */
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.feature-hero1 .hero-cta:hover {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+/* Secondary CTA Link */
+.feature-hero1 .hero-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  max-width: 196px;
+  height: 40px; /* Figma 40px Height */
+  color: #303030;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  transition: color 0.2s ease;
+}
+
+.feature-hero1 .hero-secondary-link:hover {
+  color: #4e84ff;
+}
+
+/* Right Side Illustration Container */
+.feature-hero1 .hero-image {
+  width: 550px; /* Exact Figma 550x550 Frame */
+  max-width: 550px;
+  height: 550px;
+  max-height: 550px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.feature-hero1 .hero-image img,
+.feature-hero1 .hero-image picture {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  display: block;
+}
+
+/* Bottom Search Pill Component Container */
+.feature-hero1 .hero-search-pill {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 380px; /* Figma 380px Pill Width */
+  height: 48px; /* Figma 48px Pill Height */
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 0 20px;
+  box-sizing: border-box;
+}
+
+.feature-hero1 .hero-search-pill .search-input {
+  width: 219px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 14px; /* Body 3 Size */
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  line-height: 160%; /* 160% Line Height */
+  letter-spacing: 0.01em; /* 1% Letter Spacing */
+  color: #303030;
+  vertical-align: middle;
+}
+
+.feature-hero1 .hero-search-pill .search-input::placeholder {
+  color: #717171;
+  font-style: italic; /* Matches Figma Prompt */
+}
+
+.feature-hero1 .hero-search-pill .search-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 88px;
+  height: 40px;
+  justify-content: flex-end;
+}
+
+.feature-hero1 .hero-search-pill .btn-mic {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24.03px;
+  height: 24.03px;
+  color: #111;
+}
+
+.feature-hero1 .hero-search-pill .btn-mic svg {
+  width: 24.03px;
+  height: 24.03px;
+  fill: currentcolor;
+}
+
+.feature-hero1 .hero-search-pill .btn-submit-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #4e84ff; /* Figma Solid Blue Circle */
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feature-hero1 .hero-search-pill .btn-submit-circle:hover {
+  background-color: #3b6edc;
+}
+
+.feature-hero1 .hero-search-pill .btn-submit-circle svg {
+  width: 16px;
+  height: 16px;
+  stroke: #fff;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Responsive Rules */
+@media (width <= 1024px) {
+  .feature-hero1-wrapper,
+  .feature-hero1 {
+    padding: 48px 32px 96px;
+    min-height: auto;
+  }
+
+  .feature-hero1 .hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .feature-hero1 .column-left,
+  .feature-hero1 .column-right,
+  .feature-hero1 .hero-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .feature-hero1 .hero-content {
+    gap: 24px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .feature-hero1 .hero-heading {
+    font-size: 32px;
+    min-height: auto;
+  }
+
+  .feature-hero1 .hero-image {
+    height: 380px;
+  }
+}
+
+@media (width <= 768px) {
+  .feature-hero1-wrapper,
+  .feature-hero1 {
+    padding: 32px 20px 88px;
+  }
+
+  .feature-hero1 .hero-heading {
+    font-size: 26px;
+  }
+
+  .feature-hero1 .hero-image {
+    height: 280px;
+  }
+}
