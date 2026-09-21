@@ -5,7 +5,8 @@
   background: #fff;
   color: #1e1e1e;
   font-family: Arial, sans-serif;
-  padding: 64px 56px;
+  padding: 64px 56px 80px;
+  position: relative;
 }
 
 .feature-hero .hero-container {
@@ -36,7 +37,6 @@
 .feature-hero .column-right {
   width: 358px;
   max-width: 358px;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -67,35 +67,43 @@
   object-fit: contain;
 }
 
-/* Title / Main Heading (Figma Specs Applied) */
+/* Main Heading (3-line wrap) */
 .feature-hero .hero-heading {
   width: 100%;
   max-width: 406px;
   font-size: 38px;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   font-style: normal;
-  line-height: 140%; /* 1.4 */
-  letter-spacing: -0.03em; /* -3% */
+  line-height: 140%;
+  letter-spacing: -0.03em;
   color: #111;
   opacity: 1;
   margin: 0;
 }
 
-/* Sub text / Middle Description (Figma Specs Applied) */
+/* Middle Description Paragraph */
 .feature-hero .hero-description {
   width: 100%;
   max-width: 358px;
-  font-size: 16px; /* Increased font size */
-  font-weight: 400; /* Regular */
+  font-size: 16px;
+  font-weight: 400;
   font-style: normal;
-  line-height: 160%; /* 1.6 */
-  letter-spacing: 0.01em; /* 1% */
-  color: #303030; /* --Text-Neutral-Default */
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #303030;
   opacity: 1;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
 }
 
-/* CTA Link / Button (Figma Specs Applied) */
+/* CTA Wrapper for Stacking Links */
+.feature-hero .cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Primary CTA Button */
 .feature-hero .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -107,15 +115,14 @@
   border: 1px solid #1f1f1f;
   border-radius: 0;
   background-color: transparent;
-  color: #1f1f1f; /* --Text-Default-Default */
+  color: #1f1f1f;
   font-size: 14px;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   line-height: 100%;
-  letter-spacing: 0.01em; /* 1% */
+  letter-spacing: 0.01em;
   text-decoration: none;
   white-space: nowrap;
   box-sizing: border-box;
-  opacity: 1;
   transition: all 0.2s ease-in-out;
 }
 
@@ -124,7 +131,23 @@
   color: #fff;
 }
 
-/* Right Side Image (Figma Specs Applied) */
+/* Secondary Link Below Primary Button */
+.feature-hero .hero-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #303030;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.feature-hero .hero-secondary-link:hover {
+  color: #4e84ff;
+}
+
+/* Right Side Image */
 .feature-hero .hero-image {
   width: 100%;
   max-width: 606px;
@@ -153,7 +176,7 @@
 @media (width <= 1024px) {
   .feature-hero-wrapper,
   .feature-hero {
-    padding: 48px 32px;
+    padding: 48px 32px 72px;
   }
 
   .feature-hero .hero-container {
@@ -182,7 +205,7 @@
 @media (width <= 768px) {
   .feature-hero-wrapper,
   .feature-hero {
-    padding: 32px 20px;
+    padding: 32px 20px 64px;
   }
 
   .feature-hero .hero-content {

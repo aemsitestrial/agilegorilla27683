@@ -464,13 +464,25 @@
       {
         "component": "text",
         "name": "ctaText",
-        "label": "CTA Text",
+        "label": "Primary CTA Text",
         "valueType": "string"
       },
       {
         "component": "aem-content",
         "name": "ctaLink",
-        "label": "CTA Link",
+        "label": "Primary CTA Link",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "secondaryText",
+        "label": "Secondary Link Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "secondaryLink",
+        "label": "Secondary Link CTA",
         "valueType": "string"
       },
       {
